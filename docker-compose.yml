@@ -7,6 +7,19 @@ services:
       - 9160:9160
     volumes:
       - ~/Training/volumes/cassandra:/var/lib/cassandra
+  jenkins:
+    image: jenkins
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - /var/jenkins_home
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ~/Training/volumes/mongo:/data/db  
   neo4j:
     image: neo4j
     ports:
@@ -14,12 +27,6 @@ services:
       - 7474:7474
     volumes:
       - ~/Training/volumes/neo4j/data:/data
-  mongo:
-    image: mongo
-    ports:
-      - 27017:27017
-    volumes:
-      - ~/Training/volumes/mongo:/data/db  
   redis:
     image: redis
     ports:
