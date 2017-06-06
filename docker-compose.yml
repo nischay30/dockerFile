@@ -1,0 +1,14 @@
+version: "2"
+services:
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ~/Training/volumes/mongo:/data/db  
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - ~/Training/volumes/redis:/data
